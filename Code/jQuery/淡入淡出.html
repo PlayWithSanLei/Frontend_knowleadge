@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>淡入淡出</title>
+  <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+<h2>这里展示淡入淡出</h2>
+<button class="fadeIn">淡入</button>
+<button class="fadeOut">淡出</button>
+<button class="fadeToggle">淡入/淡出</button>
+<button class="fadeTo">点击变淡</button>
+<button class="fadeTo1">点击还原</button>
+<p>淡入淡出效果展示</p>
+</body>
+<script>
+  $(() => {
+      $('.fadeIn').click(() => {
+          $('p').fadeIn(5000)
+      })
+
+      $('.fadeOut').click(() => {
+          $('p').fadeOut('fast')
+      })
+
+      $('.fadeToggle').click(() => {
+          $('p').fadeToggle('slow')
+      })
+
+      $('.fadeTo').click(() => {
+          $('p').fadeTo('fast', 0.5)
+      })
+
+      $('.fadeTo1').click(() => {
+          $('p').fadeTo('fast', 1)
+      })
+  })
+</script>
+</html>

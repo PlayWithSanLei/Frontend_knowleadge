@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>滑动</title>
+  <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js">
+  </script>
+  <style>
+      * {
+          padding: 0;
+          margin: 0;
+      }
+    #flip, #panel, #flip1, #flipToggle {
+        background-color: rgba(13, 152, 13, 0.4);
+        border: green 1px solid;
+        text-align: center;
+        padding: 5px;
+    }
+    #flip1, #flip, #flipToggle {
+        flex: 1;
+    }
+    #panel {
+        padding: 50px;
+        display: none;
+    }
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div id="flip">点击滑下面板</div>
+  <div id="flipToggle">点击滑上/滑下面板</div>
+  <div id="flip1">点击滑上面板</div>
+</div>
+<div id="panel">Hello, World!</div>
+</body>
+<script>
+  $(() => {
+      $('#flip').click(() => {
+          $('#panel').slideDown()
+      })
+
+      $('#flip1').click(() => {
+          $('#panel').slideUp()
+      })
+
+      $('#flipToggle').click(() => {
+          $('#panel').slideToggle()
+      })
+  })
+</script>
+</html>

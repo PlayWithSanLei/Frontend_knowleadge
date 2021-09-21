@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CDN引入jQuery</title>
+</head>
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<body>
+<h2>这是一个测试</h2>
+<p>点击按钮我就会消失哦</p>
+<button class="hide">隐藏</button>
+<button class="show">展示</button>
+<button class="toggle">隐藏/展示</button>
+</body>
+<script>
+    $(document).ready(function () {
+        $('.hide').click(function () {
+            $('p').hide(1000)
+        })
+    })
+
+    $(function () {
+        $('.show').click(function () {
+            $('p').show(1000)
+        })
+    })
+
+    $(function () {
+        $('.toggle').click(function () {
+            $('p').toggle(1000)
+        })
+    })
+  // $(function () {
+  //     $("button").click(function (){
+  //         $("p").hide()
+  //     })
+  // })
+</script>
+</html>

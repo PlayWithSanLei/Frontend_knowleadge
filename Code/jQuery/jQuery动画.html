@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>动画</title>
+  <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js">
+  </script>
+  <style>
+      * {
+          margin: 0;
+          padding: 0;
+      }
+      .ani {
+          background-color: #98bf21;
+          height: 100px;
+          width: 100px;
+          position: absolute;
+      }
+  </style>
+</head>
+<body>
+<div class="ani">test</div>
+</body>
+
+<script>
+    $(() => {
+        $('.ani').click(() => {
+            //     $('div').animate({
+            //         left: 'toggle',
+            //         height: 'toggle',
+            //         width: 'toggle'
+            //     })
+            var div = $('.ani');
+            div.animate({height: '300px', opacity: '0.4'}, 'fast');
+            div.animate({width: '100%', opacity: '0.8'}, 'fast');
+            div.animate({bottom: '0', opacity: '1'}, 'slow');
+            for (let i = 0; i < 10; i++) {
+                div.animate({fontSize: '5em'}, 'slow');
+                div.animate({fontSize: '1em'}, 'slow');
+            }
+            div.animate({top: '0', opacity: '0.8'}, 'fast');
+            div.animate({height: '100px', opacity: '0.4'}, 'slow');
+            div.animate({width: '100px', opacity: '0.8'}, 'fast');
+        })
+
+        $('.stop').click(() => {
+            $('.ani').stop()
+        })
+
+    })
+</script>
+</html>
