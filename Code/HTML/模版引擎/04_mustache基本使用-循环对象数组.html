@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mustache</title>
+  <script src="https://cdn.bootcdn.net/ajax/libs/mustache.js/4.1.0/mustache.js"></script>
+</head>
+<body>
+<script>
+    var tempStr = `
+        <ul>
+        {{#arr}}
+       <li>
+        <div class="hd">{{name}}的基本信息</div>
+        <div class="bd">
+        <p>姓名：{{name}}</p>
+        <p>年龄：{{age}}</p>
+        <p>性别：{{sex}}</p>
+</div>
+</li>
+{{/arr}}
+</ul>
+        `
+    var data = {
+        arr: [
+            {"name": "SanLei", "age": 21, "sex": "male"},
+            {"name": "Eintr", "age": 22, "sex": "male"},
+            {"name": "Yj-Dev", "age": 21, "sex": "female"}
+        ]
+    }
+    var domStr = Mustache.render(tempStr, data)
+    var body = document.querySelector('body')
+    body.innerHTML += domStr
+</script>
+</body>
+</html>

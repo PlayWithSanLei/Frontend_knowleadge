@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>数组join法</title>
+</head>
+<body>
+<ul id="list">
+</ul>
+<script>
+    var arr = [
+        {"name": "SanLei", "age": 21, "sex": "male"},
+        {"name": "Eintr", "age": 22, "sex": "male"},
+        {"name": "Yj-Dev", "age": 21, "sex": "female"}
+    ]
+
+    var list = document.getElementById('list')
+
+    for (let i = 0; i < arr.length; i++) {
+        list.innerHTML += [
+            '<li>',
+            '    <div className="hd">' + arr[i].name +'的信息</div>',
+            '    <div className="bd">',
+            '        <p>姓名：'+ arr[i].name +'</p>',
+            '        <p>年龄：'+ arr[i].age +'</p>',
+            '        <p>性别：'+ arr[i].sex +'</p>',
+            '    </div>',
+            '</li>'
+        ].join('')
+    }
+</script>
+</body>
+</html>

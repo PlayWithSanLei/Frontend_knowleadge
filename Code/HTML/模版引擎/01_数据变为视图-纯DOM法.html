@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>纯DOM</title>
+</head>
+<body>
+<ul id="list">
+
+</ul>
+</body>
+<script>
+  var arr = [
+      {"name": "SanLei", "age": 21, "sex": "male"},
+      {"name": "Eintr", "age": 22, "sex": "male"},
+      {"name": "Yj-Dev", "age": 21, "sex": "female"}
+  ]
+
+  var list = document.getElementById('list')
+  for (var i = 0; i < arr.length; i++) {
+      // 每遍历一项，必须创建一个标签
+      let oLi = document.createElement('li')
+      // 创建内部文字
+      let hdDiv = document.createElement('div')
+      hdDiv.className = 'hd'
+      hdDiv.innerText = arr[i].name + '的基本信息'
+
+      let bdDiv = document.createElement('div')
+      bdDiv.className = 'bd'
+      let p1 = document.createElement('p')
+      p1.innerText = '姓名：' + arr[i].name
+      bdDiv.appendChild(p1)
+      let p2 = document.createElement('p')
+      p2.innerText = '年龄：' + arr[i].age
+      bdDiv.appendChild(p2)
+      let p3 = document.createElement('p')
+      p3.innerText = '性别：' + arr[i].sex
+      bdDiv.appendChild(p3)
+
+      // 创建的节点是孤儿节点，必须上树才能看见
+      oLi.appendChild(hdDiv)
+      hdDiv.appendChild(bdDiv)
+      list.appendChild(oLi)
+  }
+</script>
+</html>

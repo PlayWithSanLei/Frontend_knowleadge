@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mustache</title>
+  <script src="https://cdn.bootcdn.net/ajax/libs/mustache.js/4.1.0/mustache.js"></script>
+</head>
+<body>
+<script>
+    var tempStr = `
+    <ul>
+    {{#arr}}
+    <li>{{.}}</li>
+    {{/arr}}
+</ul>
+    `
+    var data = {
+        arr: ['A', 'B', 'C']
+    }
+    var domStr = Mustache.render(tempStr, data)
+    var body = document.querySelector('body')
+    body.innerHTML += domStr
+</script>
+</body>
+</html>
