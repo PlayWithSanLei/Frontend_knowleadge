@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+      * {
+          margin: 0;
+          padding: 0;
+      }
+
+      .outContainer {
+          max-width: 300px;
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          grid-template-rows: repeat(3, 1fr);
+          grid-gap: 1%;
+          grid-auto-flow: row;
+      }
+
+      .container {
+          width: 100px;
+          height: 100px;
+          border: 1px red solid;
+      }
+
+
+      .circle {
+          background-color: black;
+          border-radius: 50%;
+          width: 33px;
+          height: 33px;
+      }
+
+      .topLeft {
+          display: flex;
+      }
+
+      .topMid {
+          display: flex;
+          justify-content: center;
+      }
+
+      .topRight {
+          display: flex;
+          justify-content: flex-end;
+      }
+
+      .midLeft {
+          display: flex;
+          align-items: center;
+      }
+
+      .midMid {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+      }
+
+      .midRight {
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+      }
+
+      .bottomLeft {
+          display: flex;
+          align-items: flex-end;
+      }
+
+      .bottomMid {
+          display: flex;
+          align-items: flex-end;
+          justify-content: center;
+      }
+
+      .bottomRight {
+          display: flex;
+          align-items: flex-end;
+          justify-content: flex-end;
+      }
+
+      .doubleTop {
+          display: flex;
+          justify-content: space-between;
+      }
+
+      .doubleLeft {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+      }
+
+      .doubleMid {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: center;
+      }
+
+      .doubleRight {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: flex-end;
+      }
+
+      .doubleTopLeftAndCenter {
+          display: flex;
+      }
+
+      .circle1:nth-child(2) {
+          align-self: center;
+      }
+
+      .doubleDJ {
+          display: flex;
+          justify-content: space-between;
+      }
+
+      .circle2:nth-child(2) {
+          align-self: flex-end;
+      }
+
+      .TripleDJ {
+          display: flex;
+      }
+
+      .circle3:nth-child(2) {
+          align-self: center;
+      }
+
+      .circle3:nth-child(3) {
+          align-self: flex-end;
+      }
+
+      .fourDJ {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: flex-end;
+          align-content: space-between;
+      }
+
+      .Four {
+          display: flex;
+          flex-wrap: wrap;
+          align-content: space-between;
+      }
+
+      .sidian {
+          flex-basis: 100%;
+          display: flex;
+          justify-content: space-between;
+      }
+
+      .Six {
+          display: flex;
+          flex-wrap: wrap;
+          align-content: space-between;
+      }
+
+      .SixColumn {
+          display: flex;
+          flex-wrap: wrap;
+          flex-direction: column;
+          align-content: space-between;
+      }
+  </style>
+</head>
+<body>
+<div class="outContainer">
+  <div class="container topLeft">
+    <span class="circle">1</span>
+  </div>
+  <div class="container topMid">
+    <span class="circle">1</span>
+  </div>
+  <div class="container topRight">
+    <span class="circle">1</span>
+  </div>
+  <div class="container midLeft">
+    <span class="circle">1</span>
+  </div>
+  <div class="container midMid">
+    <span class="circle">1</span>
+  </div>
+  <div class="container midRight">
+    <span class="circle">1</span>
+  </div>
+  <div class="container bottomLeft">
+    <span class="circle">1</span>
+  </div>
+  <div class="container bottomMid">
+    <span class="circle">1</span>
+  </div>
+  <div class="container bottomRight">
+    <span class="circle">1</span>
+  </div>
+</div>
+<br>
+<br>
+<div class="outContainer">
+  <div class="container doubleTop">
+    <span class="circle">1</span>
+    <span class="circle">1</span>
+  </div>
+  <div class="container doubleLeft">
+    <span class="circle">1</span>
+    <span class="circle">1</span>
+  </div>
+  <div class="container doubleMid">
+    <span class="circle">1</span>
+    <span class="circle">1</span>
+  </div>
+  <div class="container doubleRight">
+    <span class="circle">1</span>
+    <span class="circle">1</span>
+  </div>
+  <div class="container doubleTopLeftAndCenter">
+    <span class="circle circle1">1</span>
+    <span class="circle circle1">1</span>
+  </div>
+  <div class="container doubleDJ">
+    <span class="circle circle2">1</span>
+    <span class="circle circle2">1</span>
+  </div>
+  <div class="container TripleDJ">
+    <span class="circle circle3">1</span>
+    <span class="circle circle3">1</span>
+    <span class="circle circle3">1</span>
+  </div>
+  <div class="container fourDJ">
+    <span class="circle">1</span>
+    <span class="circle">1</span>
+    <span class="circle">1</span>
+    <span class="circle">1</span>
+  </div>
+  <div class="container Four">
+    <div class="sidian">
+      <span class="circle">1</span>
+      <span class="circle">1</span>
+    </div>
+    <div class="sidian">
+      <span class="circle">1</span>
+      <span class="circle">1</span>
+    </div>
+  </div>
+  <div class="container Six">
+    <span class="circle">1</span>
+    <span class="circle">1</span>
+    <span class="circle">1</span>
+    <span class="circle">1</span>
+    <span class="circle">1</span>
+    <span class="circle">1</span>
+  </div>
+  <div class="container SixColumn">
+    <span class="circle">1</span>
+    <span class="circle">1</span>
+    <span class="circle">1</span>
+    <span class="circle">1</span>
+    <span class="circle">1</span>
+    <span class="circle">1</span>
+  </div>
+</div>
+</body>
+</html>
