@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Three</title>
+  <style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        width: 200px;
+        height: 200px;
+        border: 2px rgba(0,0,0,0.4) solid;
+        border-radius: 2%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .circle {
+        background-color: black;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+    }
+
+    .circle:nth-child(2) {
+        align-self: center;
+    }
+
+    .circle:nth-child(3) {
+        align-self: flex-end;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+</div>
+</body>
+</html>
