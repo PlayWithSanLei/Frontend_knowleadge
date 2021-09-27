@@ -32,7 +32,6 @@ const EventEmiter = {
 
 function EventEmit() {
     var obj = {}
-    var eventNames = []
     var pid = 0
     function on(eventName, callback) {
         if (eventName in obj) {
