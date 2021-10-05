@@ -8,17 +8,21 @@
 <body>
 <script>
     var tempStr = `
-{{#m}}
-      <h2>看得见我吗</h2>
-{{/m}}
+<h1>我买了一个{{thing}}, 好{{mood}}</h1>
 `
     var data = {
-        arr: ['A', 'B', 'C'],
-        m:false
+        thing: 'iphone11',
+        mood: '开心'
     }
-    var domStr = Mustache.render(tempStr, data)
-    var body = document.querySelector('body')
-    body.innerHTML += domStr
+    console.log(tempStr.replace(/\{\{(\w+)\}\}/g, (a,$1,c) => {
+        return data[$1]
+    }))
+    // 最简单的模版引擎实现机理，利用的是正则表达式的replace
+    function render(tempStr, data) {
+        return tempStr.replace(/\{\{(\w+)\}\}/g, (findStr, $1) => {
+            return data[$1]
+        })
+    }
 </script>
 </body>
 </html>
