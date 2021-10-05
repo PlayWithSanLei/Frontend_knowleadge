@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mustache</title>
+  <script src="../../JavaScript/MustacheSourceCode/mustache.js"></script>
+</head>
+<body>
+<script>
+    var tempStr = `
+        <ul>
+        {{#arr}}
+       <li>
+        <div class="hd">{{name}}的基本信息</div>
+        <div class="bd">
+        <p>姓名：{{name}}</p>
+        <p>年龄：{{age}}</p>
+        <p>性别：{{sex}}</p>
+</div>
+</li>
+{{/arr}}
+</ul>
+`
+    Mustache.render(tempStr, {})
+</script>
+</body>
+</html>
