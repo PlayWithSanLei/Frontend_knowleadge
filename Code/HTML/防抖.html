@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>防抖</title>
+  <style>
+      #content {
+          height: 150px;
+          line-height: 150px;
+          text-align: center;
+          color: #fff;
+          background-color: #ccc;
+          font-size: 80px;
+      }
+  </style>
+</head>
+<body>
+<div id="content">
+</div>
+
+<script>
+  let num = 1;
+  let content = document.getElementById('content');
+
+  function count () {
+      content.innerHTML = num++;
+  }
+
+  // 非立即执行版debounce
+  function debounce(fn, delay) {
+      let timeout;
+      return function (...args) {
+          if (timeout) clearTimeout(timeout);
+          timeout = setTimeout(() => {
+              fn.apply(this, args)
+          }, delay)
+      }
+  }
+
+  // 立即执行版debounce
+  function lDebounce(fn, delay = 50, immediate) {
+      let timer = null;
+      return function(...args) {
+          if (timer) clearTimeout(timer);
+          /*
+          * immediate为true表示第一次触发后执行
+          * timer为空表示首次触发
+          */
+          if (immediate && !timer) {
+              fn.apply(this, args)
+          }
+
+          timer = setTimeout(() => {
+              fn.apply(this, args)
+          }, delay)
+      }
+  }
+  // content.onmousemove = lDebounce(count, 1000, true);
+  content.onmousemove = debounce(count, 1000)
+</script>
+</body>
+</html>
