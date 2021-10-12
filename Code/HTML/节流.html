@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>节流</title>
+  <style>
+    #content {
+        height: 150px;
+        line-height: 150px;
+        text-align: center;
+        color: #fff;
+        background-color: #ccc;
+        font-size: 80px;
+    }
+  </style>
+</head>
+<body>
+<div id="content">
+</div>
+<script>
+  let num = 1;
+  let content = document.getElementById('content')
+
+  function count() {
+      content.innerHTML = num++;
+  }
+
+  const throttle = (fn, delay = 50) => {
+      // 上一次执行fn的时间
+      let previous = 0
+      // 将throttle处理结果当作函数返回
+      return function (...args) {
+          // 获取当前时间，转换成时间戳，单位毫秒
+          let now = +new Date()
+          // 将当前时间和上一次执行函数的时间进行对比
+          // 大于等待时间就把previous设置为当前时间并执行函数fn
+          if (now - previous > delay) {
+              previous = now
+              fn.apply(this, args)
+          }
+      }
+  }
+
+  // 定时器方案
+  function Throttle(fn, delay=50) {
+      let timeout;
+      return function (...args) {
+          if (!timeout) {
+              timeout = setTimeout(() => {
+                  timeout = null;
+                  fn.apply(this, args)
+              }, delay)
+          }
+      }
+  }
+
+  content.onmousemove = Throttle(count, 1000)
+</script>
+</body>
+</html>
