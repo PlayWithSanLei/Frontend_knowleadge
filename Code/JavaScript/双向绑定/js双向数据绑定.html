@@ -1,0 +1,33 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>js数据双向绑定</title>
+</head>
+<body>
+<div id="app">
+  <input type="text" id="a">
+  <span id="b"></span>
+</div>
+</body>
+<script>
+  var obj = {}
+  var val = 'zhao'
+  Object.defineProperty(obj, 'val', {
+      get: function () {
+          return val;
+      },
+      set: function (newVal) {
+          val = newVal;
+          document.getElementById('a').value = val;
+          document.getElementById('b').innerHTML = val;
+      }
+  });
+
+  document.addEventListener('input', e => {
+      obj.val = e.target.value;
+  })
+</script>
+</html>
