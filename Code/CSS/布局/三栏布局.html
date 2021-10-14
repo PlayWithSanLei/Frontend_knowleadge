@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>三栏布局</title>
+  <style>
+      * {
+          padding: 0;
+          margin: 0;
+          height: 100%;
+      }
+
+      /*浮动实现*/
+      /*.wrapper .left {*/
+      /*    width: 200px;*/
+      /*    background-color: #faa;*/
+      /*    float: left;*/
+      /*}*/
+
+      /*.wrapper .right {*/
+      /*    width: 200px;*/
+      /*    float: right;*/
+      /*    background-color: #aaf;*/
+      /*}*/
+
+      /*.wrapper .center {*/
+      /*    background-color: #afa;*/
+      /*    margin: 0 200px*/
+      /*}*/
+
+      /*inline-block实现*/
+      /*.wrapper {*/
+      /*    font-size: 0;*/
+      /*}*/
+
+      /*.wrapper .left {*/
+      /*    display: inline-block;*/
+      /*    width: 200px;*/
+      /*    background-color: #faa;*/
+      /*}*/
+
+      /*.wrapper .right {*/
+      /*    display: inline-block;*/
+      /*    width: 200px;*/
+      /*    background-color: #afa;*/
+      /*}*/
+
+      /*.wrapper .center {*/
+      /*    width: calc(100% - 400px);*/
+      /*    display: inline-block;*/
+      /*    background-color: #aaf;*/
+      /*}*/
+
+      /*采用flex布局*/
+      .wrapper {
+          display: flex;
+      }
+
+      .wrapper .left {
+          /*width: 200px;*/
+          flex: 1;
+          background-color: #faa;
+      }
+
+      .wrapper .right {
+          /*width: 200px;*/
+          flex: 1;
+          background-color: #afa;
+      }
+
+      .wrapper .center {
+          flex: 1;
+          background-color: #aaf;
+      }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+  <div class="left"></div>
+  <div class="center"></div>
+  <div class="right"></div>
+</div>
+</body>
+</html>

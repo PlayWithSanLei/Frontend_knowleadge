@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>圣杯布局</title>
+  <style>
+     * {
+         padding: 0;
+         margin: 0;
+         height: 100%;
+     }
+    .container {
+        position: relative;
+        background-color: #ddd;
+        padding: 0 300px 0;
+    }
+
+    .container .middle {
+        float: left;
+        width: 100%;
+        background-color: #faa;
+
+    }
+
+    .container .left {
+        float: left;
+        position: relative;
+        width: 300px;
+        margin-left: -100%;
+        left: -300px;
+        background-color: #aff;
+
+    }
+
+    .container .right {
+        float: left;
+        position: relative;
+        width: 300px;
+        margin-left: -300px;
+        left: 300px;
+        background-color: #faf;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+<!--  middle写在前面先加载middle-->
+  <div class="middle"></div>
+  <div class="left"></div>
+  <div class="right"></div>
+</div>
+</body>
+</html>
