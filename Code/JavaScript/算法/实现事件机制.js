@@ -3,7 +3,7 @@
 如：EventEmitter.on(); EventEmitter.trigger();
 * */
 
-const EventEmiter = {
+const EventEmitter = {
     on :function (type, handle) {
         // 创建一个缓存
         this.cache = {}
